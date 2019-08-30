@@ -179,7 +179,7 @@ export default class posterAnnoce extends Component {
         data.append('file3', this.state.pictures3[0])
 
 
-        axios.post('https://monchezmoi.herokuapp.com/venteImm', data, this.setAuthToken(localStorage.getItem('token')))
+        axios.post('https://backmim.herokuapp.com/venteImm', data, this.setAuthToken(localStorage.getItem('token')))
             .then(result => {
                 console.log("result", result);
                 if (result.data == "not ok") {

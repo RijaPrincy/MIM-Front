@@ -65,7 +65,7 @@ export default class Authentification extends Component {
 
     }
     login = (e) => {
-        axios.post('https://monchezmoi.herokuapp.com/login', e)
+        axios.post('https://backmim.herokuapp.com/login', e)
             .then(result => {
                 if (result.data == "not ok") {
                     console.log("erreur mdp");
@@ -91,7 +91,7 @@ export default class Authentification extends Component {
     }
 
     login2 = (e) => {
-        axios.post('https://monchezmoi.herokuapp.com/register', e)
+        axios.post('https://backmim.herokuapp.com/register', e)
             .then(result => {
                 if (result.data == "manque donne") {
                     console.log("erreur", result.data)

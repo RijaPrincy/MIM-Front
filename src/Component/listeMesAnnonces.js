@@ -17,7 +17,7 @@ export default class listeMesAnnonces extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://backmim.herokuapp.com/getMesAnnonces/" + localStorage.getItem('id'))
+        axios.get("https://monchezmoi.herokuapp.com/getMesAnnonces/" + localStorage.getItem('id'))
             .then(resp => {
                 this.setState({
                     list: resp.data,
@@ -67,7 +67,7 @@ export default class listeMesAnnonces extends Component {
                               };
 
                             
-                            let a = "https://backmim.herokuapp.com/image/" + ate.image
+                            let a = "https://monchezmoi.herokuapp.com/image/" + ate.image
                             let h = new Date(ate.date)
                             let r = h.getDate() + "/" + (h.getMonth() + 1) + "/" + h.getFullYear()
                             return <div>

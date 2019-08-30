@@ -39,14 +39,14 @@ export default class detailAnnonce extends Component {
 
     componentDidMount() {
         console.log(this.props.match.params.id);
-        axios.get("https://backmim.herokuapp.com/getOne/" + this.props.match.params.id)
+        axios.get("https://monchezmoi.herokuapp.com/getOne/" + this.props.match.params.id)
             .then(resp => {
                 this.setState({
                     annonce: resp.data,
-                    url: "https://backmim.herokuapp.com/image/" + resp.data.image,
-                    url1: "https://backmim.herokuapp.com/image/" + resp.data.image1,
-                    url2: "https://backmim.herokuapp.com/image/" + resp.data.image2,
-                    url3: "https://backmim.herokuapp.com/image/" + resp.data.image3,
+                    url: "https://monchezmoi.herokuapp.com/image/" + resp.data.image,
+                    url1: "https://monchezmoi.herokuapp.com/image/" + resp.data.image1,
+                    url2: "https://monchezmoi.herokuapp.com/image/" + resp.data.image2,
+                    url3: "https://monchezmoi.herokuapp.com/image/" + resp.data.image3,
                     loading: false
                 })
                 console.log(resp.data);
@@ -86,7 +86,7 @@ export default class detailAnnonce extends Component {
         this.setState({
             loadC:true
         })
-        axios.put("https://backmim.herokuapp.com/postcontact2", e)
+        axios.put("https://monchezmoi.herokuapp.com/postcontact2", e)
             .then(res => {
                 console.log(res);
                 if (res.data == "not ok") {

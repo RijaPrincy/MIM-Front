@@ -181,7 +181,7 @@ export default class detailMesAnnonce extends Component {
         data.append('file3', this.state.pictures3[0])
 
 
-        axios.put('https://backmim.herokuapp.com/updateVenteImm/' + this.props.match.params.id, data, this.setAuthToken(localStorage.getItem('token')))
+        axios.put('https://monchezmoi.herokuapp.com/updateVenteImm/' + this.props.match.params.id, data, this.setAuthToken(localStorage.getItem('token')))
             .then(result => {
                 console.log("result put", result.data.note);
                 if (result.data == "not ok") {
@@ -194,15 +194,15 @@ export default class detailMesAnnonce extends Component {
                     //document.getElementById("reussi").innerHTML = ""
                 } else {
 
-                    axios.get("https://backmim.herokuapp.com/getOne/" + this.props.match.params.id)
+                    axios.get("https://monchezmoi.herokuapp.com/getOne/" + this.props.match.params.id)
                         .then(resp => {
                             console.log("data", resp.data);
                             this.setState({
                                 annonce: resp.data,
-                                url: "https://backmim.herokuapp.com/image/" + resp.data.image,
-                                url1: "https://backmim.herokuapp.com/image/" + resp.data.image1,
-                                url2: "https://backmim.herokuapp.com/image/" + resp.data.image2,
-                                url3: "https://backmim.herokuapp.com/image/" + resp.data.image3,
+                                url: "https://monchezmoi.herokuapp.com/image/" + resp.data.image,
+                                url1: "https://monchezmoi.herokuapp.com/image/" + resp.data.image1,
+                                url2: "https://monchezmoi.herokuapp.com/image/" + resp.data.image2,
+                                url3: "https://monchezmoi.herokuapp.com/image/" + resp.data.image3,
                                 loadVue: false
                             })
                         }).catch(er => {
@@ -258,7 +258,7 @@ export default class detailMesAnnonce extends Component {
     componentDidMount() {
         console.log(this.props.match.params.id);
 
-        axios.get("https://backmim.herokuapp.com/getOne/" + this.props.match.params.id)
+        axios.get("https://monchezmoi.herokuapp.com/getOne/" + this.props.match.params.id)
             .then(resp => {
                 console.log("resp", resp);
 
@@ -278,10 +278,10 @@ export default class detailMesAnnonce extends Component {
                     prix: resp.data.prix,
                     description: resp.data.description,
                     message: resp.data.contact,
-                    url: "https://backmim.herokuapp.com/image/" + resp.data.image,
-                    url1: "https://backmim.herokuapp.com/image/" + resp.data.image1,
-                    url2: "https://backmim.herokuapp.com/image/" + resp.data.image2,
-                    url3: "https://backmim.herokuapp.com/image/" + resp.data.image3,
+                    url: "https://monchezmoi.herokuapp.com/image/" + resp.data.image,
+                    url1: "https://monchezmoi.herokuapp.com/image/" + resp.data.image1,
+                    url2: "https://monchezmoi.herokuapp.com/image/" + resp.data.image2,
+                    url3: "https://monchezmoi.herokuapp.com/image/" + resp.data.image3,
                     loading: false
                 })
 
@@ -311,10 +311,10 @@ export default class detailMesAnnonce extends Component {
 
     visibilite(e) {
 
-        axios.put("https://backmim.herokuapp.com/updateVisibilite2", e)
+        axios.put("https://monchezmoi.herokuapp.com/updateVisibilite2", e)
             .then(re => {
                 console.log(re);
-                axios.get("https://backmim.herokuapp.com/getOne/" + this.props.match.params.id)
+                axios.get("https://monchezmoi.herokuapp.com/getOne/" + this.props.match.params.id)
                     .then(resp => {
                         console.log("resp", resp);
 

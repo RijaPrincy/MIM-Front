@@ -24,7 +24,7 @@ export default class test extends Component {
 
 
     componentDidMount() {
-        axios.get("https://backmim.herokuapp.com/getAll")
+        axios.get("https://monchezmoi.herokuapp.com/getAll")
             .then(resp => {
                 this.setState({
                     list: resp.data,
@@ -266,7 +266,7 @@ export default class test extends Component {
                             liste de toutes les publications
                         </p>
                         {this.state.list.length > 0 ? this.state.list.sort((a, b) => { return (b._id - a._id) }).map((ate, index) => {
-                            let a = "https://backmim.herokuapp.com/image/" + ate.image
+                            let a = "https://monchezmoi.herokuapp.com/image/" + ate.image
                             let h = new Date(ate.date)
                             let r = h.getDate() + "/" + (h.getMonth() + 1) + "/" + h.getFullYear()
                             return <div style={{ fontSize: '15px' }}>
